@@ -980,65 +980,76 @@ NISTdegCtOk<-function(degC) degC + 273.15
 # Input: degree Celsius (temperature) (C)
 # Output: kelvin (K)
 
+NISTdegCtOkInterval<-function(degC) degC * 1
+# Input: degree Celsius (temperature interval) (C)
+# Output: kelvin (K)
+
+
+
 NISTkTOdegC<-function(k) k - 273.15 
 # Input: kelvin (K)
 # Output: degree Celsius (temperature) (C)
 
-NISTdegCtOk<-function(degC) degC * 1
-# Input: degree Celsius (temperature interval) (C)
-# Output: kelvin (K)
-
-NISTkTOdegC<-function(k) k / 1
+NISTkTOdegCinterval<-function(k) k / 1
 # Input: kelvin (K)
 # Output: degree Celsius (temperature interval) (C)
 
 NISTdegCentigradeTOdegC<-function(degCentigrade) degCentigrade
-# Input: degree centigrade (temperature) 15
+# Input: degree centigrade (temperature)
+# Output: degree Celsius (C)
+
+NISTdegCentigradeTOdegCinterval<-function(degCentigrade) degCentigrade * 1
+# Input: degree centigrade (temperature interval)
 # Output: degree Celsius (C)
 
 NISTdegCtOdegCentigrade<-function(degC) degC
 # Input: degree Celsius (C)
-# Output: degree centigrade (temperature) 15
+# Output: degree centigrade (temperature)
 
-NISTdegCentigradeTOdegC<-function(degCentigrade) degCentigrade * 1
-# Input: degree centigrade (temperature interval) 15
-# Output: degree Celsius (C)
-
-NISTdegCtOdegCentigrade<-function(degC) degC / 1
+NISTdegCtOdegCentigradeInterval<-function(degC) degC / 1
 # Input: degree Celsius (C)
-# Output: degree centigrade (temperature interval) 15
+# Output: degree centigrade (temperature interval)
 
-NISTdegFtOdegC<-function(degF) (degF - 32)/1.8  
-# Input: degree Fahrenheit (temperature) (F)
-# Output: degree Celsius (C)
+
 
 NISTdegCtOdegF<-function(degC) (degC*1.8 + 32)
 # Input: degree Celsius (C)
 # Output: degree Fahrenheit (temperature) (F)
 
+NISTdegCtOdegFinterval<-function(degC) degC / 0.5555556
+# Input: degree Celsius (C)
+# Output: degree Fahrenheit (temperature interval) (F)
+
 NISTdegFtOk<-function(degF) (degF + 459.67)/1.8  
 # Input: degree Fahrenheit (temperature) (F)
+# Output: kelvin (K)
+
+NISTdegFtOkInterval<-function(degF) degF * 0.5555556
+# Input: degree Fahrenheit (temperature interval) (F)
 # Output: kelvin (K)
 
 NISTkTOdegF<-function(k) (k*1.8 - 459.67)
 # Input: kelvin (K)
 # Output: degree Fahrenheit (temperature) (F)
 
-NISTdegFtOdegC<-function(degF) degF * 0.5555556
+NISTkTOdegFinterval<-function(k) k / 0.5555556
+# Input: kelvin (K)
+# Output: degree Fahrenheit (temperature interval) (F)
+
+NISTdegFtOdegCinterval<-function(degF) degF * 0.5555556
 # Input: degree Fahrenheit (temperature interval) (F)
 # Output: degree Celsius (C)
 
-NISTdegCtOdegF<-function(degC) degC / 0.5555556
-# Input: degree Celsius (C)
-# Output: degree Fahrenheit (temperature interval) (F)
+NISTdegFtOdegC<-function(degF) (degF - 32)/1.8  
+# Input: degree Fahrenheit (temperature) (F)
+# Output: degree Celsius (C)
 
-NISTdegFtOk<-function(degF) degF * 0.5555556
-# Input: degree Fahrenheit (temperature interval) (F)
-# Output: kelvin (K)
 
-NISTkTOdegF<-function(k) k / 0.5555556
-# Input: kelvin (K)
-# Output: degree Fahrenheit (temperature interval) (F)
+
+
+
+
+
 
 NISTdegFHourPerUkThUnITtOkPerWatt<-function(degFHourPerUkThUnIT) degFHourPerUkThUnIT * 1.895634
 # Input: degree Fahrenheit hour per British thermal unitIT (F * h/BtuIT)
@@ -1112,13 +1123,15 @@ NISTkTOdegRankine<-function(k) k * 1.8
 # Input: kelvin (K)
 # Output: degree Rankine (R)
 
-NISTdegRankineTOk<-function(degRankine) degRankine * 0.5555556
+NISTkTOdegRankineInterval<-function(k) k / 0.5555556
+# Input: kelvin (K)
+# Output: degree Rankine (temperature interval) (R)
+
+NISTdegRankineTOkInterval<-function(degRankine) degRankine * 0.5555556
 # Input: degree Rankine (temperature interval) (R)
 # Output: kelvin (K)
 
-NISTkTOdegRankine<-function(k) k / 0.5555556
-# Input: kelvin (K)
-# Output: degree Rankine (temperature interval) (R)
+
 
 NISTdenierTOkgPerMeter<-function(denier) denier * 1.111111e-07
 # Input: denier
@@ -1904,13 +1917,7 @@ NISTreciprocalMeterTOkayser<-function(reciprocalMeter) reciprocalMeter / 100
 # Input: reciprocal meter (m-1)
 # Output: kayser (K)
 
-NISTkTOdegC<-function(k) k - 273.15
-# Input: kelvin (K)
-# Output: degree Celsius (C)
 
-NISTdegCtOk<-function(degC) degC + 273.15
-# Input: degree Celsius (C)
-# Output: kelvin (K)
 
 NISTkilocalITtOjoule<-function(kilocalIT) kilocalIT * 4186.8
 # Input: kilocalorieIT (kcalIT)
@@ -3163,10 +3170,6 @@ NISTradianTOsec<-function(radian) radian / 4.848137e-06
 NISTsecTOsec<-function(sec) sec * 0.9972696
 # Input: second (sidereal)
 # Output: second (s)
-
-NISTsecTOsec<-function(sec) sec / 0.9972696
-# Input: second (s)
-# Output: second (sidereal)
 
 NISTshakeTOsec<-function(shake) shake * 1e-08
 # Input: shake
